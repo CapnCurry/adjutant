@@ -1,0 +1,11 @@
+Adjutant Pocket Code
+
+jones = DateTime.civil (2008, 5, 28, 18, 30)
+			yyyy  m  dd  hh  mm
+
+jones.year == 2008
+jones.hour == 18
+
+
+:not_done.to_s.split('_').map(&:capitalize).join(' ')
+
