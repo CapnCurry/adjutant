@@ -7,10 +7,10 @@ module Adjutant
       @title = 'New Item'
       @notes = ''
       @date = DateTime.civil
-      @type = :generic
       @remind = false
       @show_in_journal = false
     end
+    
   end
   
   class Task < Planner_Item
@@ -20,7 +20,6 @@ module Adjutant
       super
       @priority = ''
       @status = :not_started
-      @type = :task
     end
   end
 
@@ -30,7 +29,6 @@ module Adjutant
     def initialize
       super
       @duration = 0
-      @type = :appointment
     end
   end
   
@@ -41,27 +39,18 @@ module Adjutant
     def initialize
       super
       @tasks = []
-      @type = :project
     end
-  
+
   end
   
   class Reminder < Planner_Item
-    def initialize
-      super
-      @type = :reminder
-    end
   end
   
   class Journal < Planner_Item
-    def initialize
-      super
-      @type = :journal
-    end
   end
   
   class Planner
-    attr_accessor :user_name, :items
+    attr_accessor :user_name, :items, :foci
     
     def initialize
       @user_name = 'New User'
